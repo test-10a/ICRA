@@ -1,4 +1,6 @@
-export default function Home() {
+export default function DynamicPage({ params }) {
+  const slug = params.slug ? params.slug.join('/') : '';
+  
   return (
     <main style={{ maxWidth: 960, margin: '0 auto', padding: '48px 20px' }}>
       <header style={{ marginBottom: 32, textAlign: 'center' }}>
@@ -6,6 +8,9 @@ export default function Home() {
         <p style={{ margin: 0, opacity: 0.9 }}>IEEE International Conference on Robotics and Automation</p>
         <p style={{ margin: '6px 0 0', opacity: 0.7 }}>
           Host city & venue: <strong>TBD</strong> (Illustrative information only)
+        </p>
+        <p style={{ marginTop: 16, padding: 16, background: '#1a2340', borderRadius: 8 }}>
+          You visited: <strong style={{ color: '#4a9eff' }}>/{slug}</strong>
         </p>
       </header>
 
